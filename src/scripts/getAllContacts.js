@@ -1,20 +1,9 @@
-// import { PATH_DB } from '../constants/contacts.js';
-// import fs from 'node:fs/promises';
+import { PATH_DB } from '../constants/contacts.js';
+import fs from 'node:fs/promises';
 
-// export const getAllContacts = async () => {
-//     try {
-//         const data = await fs.readFile(PATH_DB, 'utf-8');
-//         const contacts = JSON.parse(data);
-//         console.log(`Було знайдено ${contacts.length} контактів`);
-//         return contacts;
-//     } catch (error) {
-//         console.log('Сталась помилка', error);
-//     }
-// };
+export const getAllContacts = async () => {
+    const data = await fs.readFile(PATH_DB, 'utf-8');
+    return data ? JSON.parse(data) : [];
+};
 
-// const main = async () => {
-//     const allContacts = await getAllContacts();
-//     console.log(allContacts);
-// };
-
-// main();
+console.log(await getAllContacts());

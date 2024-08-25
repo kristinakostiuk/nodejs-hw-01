@@ -1,19 +1,9 @@
-// import { PATH_DB } from '../constants/contacts.js';
-// import fs from 'node:fs/promises';
+import { getAllContacts } from "./getAllContacts.js";
 
-// export const countContacts = async () => {
-//     try {
-//         const data = await fs.readFile(PATH_DB, 'utf-8');
-//         const contacts = JSON.parse(data);
-//         return contacts.length;
-//     } catch (error) {
-//         console.logconsole.log('Сталась помилка', error);
-//     }
-// };
 
-// const main = async () => {
-//     const allContacts = await countContacts();
-//     console.log('Кількість контактів', allContacts);
-// };
+export const countContacts = async () => {
+    const data = await getAllContacts();
+    return data.length;
+};
 
-// main();
+console.log(await countContacts());

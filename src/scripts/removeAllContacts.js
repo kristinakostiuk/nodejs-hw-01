@@ -1,12 +1,7 @@
-// import { PATH_DB } from '../constants/contacts.js';
-// import fs from 'node:fs/promises';
+import updateContact from "./updateContact.js";
 
-// export const removeAllContacts = async () => {
-//     try {
-//         await fs.writeFile(PATH_DB, JSON.stringify([]), 'utf-8');
-//     } catch (error) {
-//         console.log('Сталась помилка', error);
-//     }
-// };
+export const removeAllContacts = async () => {
+    updateContact([]);
+};
 
-// removeAllContacts();
+removeAllContacts();
